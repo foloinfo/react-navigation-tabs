@@ -54,6 +54,7 @@ class TabNavigationView extends React.PureComponent<Props, State> {
       focused,
     }: {
       focused: boolean;
+      // @ts-ignore
     }): AccessibilityState[] => (focused ? ['selected'] : []),
   };
 
