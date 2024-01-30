@@ -36,6 +36,7 @@ export default class TabBarTop extends React.PureComponent<
     if (typeof label === 'string') {
       return (
         <Animated.Text
+          // @ts-ignore
           style={[styles.label, { color }, labelStyle]}
           allowFontScaling={allowFontScaling}
         >
