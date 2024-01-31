@@ -74,6 +74,7 @@ class TouchableWithoutFeedbackWrapper extends React.Component<
         hitSlop={{ left: 15, right: 15, top: 0, bottom: 5 }}
         accessibilityLabel={accessibilityLabel}
         accessibilityRole={accessibilityRole}
+        // @ts-ignore
         accessibilityStates={accessibilityStates}
       >
         <View {...rest} />
@@ -189,6 +190,7 @@ class TabBarBottom extends React.Component<BottomTabBarProps, State> {
         'show'
       );
       Animated[animation](this.state.visible, {
+        useNativeDriver: config?.useNativeDriver === false ? false : true,
         toValue: 0,
         ...config,
       }).start();
@@ -200,6 +202,7 @@ class TabBarBottom extends React.Component<BottomTabBarProps, State> {
       'hide'
     );
     Animated[animation](this.state.visible, {
+      useNativeDriver: config?.useNativeDriver === false ? false : true,
       toValue: 1,
       ...config,
     }).start(() => {
